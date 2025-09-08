@@ -1,0 +1,18 @@
+# python main.py --config configs/model/sasrec_ml1m.yaml
+# tmux new -s sasrec_ml1m tmux attach -t sasrec_ml1m
+model_name: SASRec
+dataset_name: ml-1m
+seed: 42
+
+window_size: 50
+
+epochs: 200
+batch_size: 256
+learning_rate: 0.001
+weight_decay: 0.0
+patience: 20
+
+embedding_dim: 64
+dropout_prob: 0.2
+num_blocks: 2
+num_attention_heads: 2

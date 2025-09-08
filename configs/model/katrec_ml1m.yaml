@@ -1,0 +1,40 @@
+# configs/model/katrec_ml1m.yaml
+# 运行：python main.py --config configs/model/katrec_ml1m.yaml
+# tmux new -s katrec_ml1m tmux attach -t katrec_ml1m
+model_name: KATRec
+dataset_name: ml-1m
+seed: 42
+
+# ===== Data & Window =====
+window_size: 5
+
+# ===== Train =====
+epochs: 200
+batch_size: 256
+learning_rate: 0.001
+weight_decay: 0.0
+patience: 20
+num_workers: 4
+
+# ===== Transformer (Seq Encoder) =====
+embedding_dim: 64
+dropout_prob: 0.2
+num_blocks: 2
+num_attention_heads: 2
+
+# ===== KG / Graph Propagation =====
+kg_embedding_dim: 64
+n_gcn_layers: 2
+mess_dropout_prob: 0.1
+kg_attn_alpha: 0.2    # KG 注意力偏置的缩放系数（可调 0.1~0.5）
+
+# ===== KGE Loss =====
+kg_margin: 1.0
+kg_loss_lambda: 0.1   # Trainer 里: loss = CE + kg_loss_lambda * KGE
+
+# ===== Misc (兼容 main.py) =====
+freeze_kg: false
+gamma: 0.5
+regs: [1e-5, 1e-5]
+
+

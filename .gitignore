@@ -1,0 +1,51 @@
+# ---- OS / IDE ----
+.DS_Store
+.vscode/
+.idea/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# ---- Packaging / Build ----
+build/
+dist/
+*.egg-info/
+
+# ---- Virtual envs (如果不在项目里也无所谓)
+.env
+.venv
+venv/
+env/
+.conda/
+
+# ---- 数据与衍生物 (按你的结构定制) ----
+# 数据（原始 & 处理后）不入库
+dataset/**
+!dataset/.gitkeep
+
+# 训练产物（模型、日志、配置快照等）
+saved/**
+!saved/.gitkeep
+
+# 结果目录，默认整体忽略，但保留一个小型汇总 CSV（你已有）
+results/**
+!results/.gitkeep
+!results/experiment_results.csv
+
+# ---- 日志 ----
+logs/
+*.log
+**/main.log
+**/train.log
+
+# ---- 常见大模型文件后缀，避免误入库 ----
+*.pth
+*.pth.tar
+*.pt
+*.ckpt
+*.bin
+*.h5
+*.pkl

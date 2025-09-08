@@ -1,0 +1,23 @@
+# python main.py --config configs/model/ksr_ml1m.yaml
+# tmux new -s ksr_ml1m tmux attach -t ksr_ml1m
+model_name: KSR
+dataset_name: ml-1m
+seed: 42
+
+window_size: 10
+
+epochs: 200
+batch_size: 256
+learning_rate: 0.001
+weight_decay: 0.0
+patience: 20
+num_workers: 4
+
+embedding_dim: 64
+dropout_prob: 0.2
+hidden_size: 64
+num_layers: 1
+kg_embedding_size: 64
+gamma: 0.5
+
+

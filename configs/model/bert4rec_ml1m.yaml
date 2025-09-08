@@ -1,0 +1,25 @@
+# 运行：python main.py --config configs/experiments/bert4rec_ml1m.yaml
+# tmux new -s bert4rec_ml1m ; tmux attach -t bert4rec_ml1m
+model_name: BERT4Rec
+dataset_name: ml-1m
+seed: 42
+
+# ===== Data & Window =====
+window_size: 5
+
+# ===== Train =====
+epochs: 200
+batch_size: 256
+learning_rate: 0.001
+weight_decay: 0.0
+patience: 20
+num_workers: 4
+
+# ===== Transformer (Bi-Encoder) =====
+embedding_dim: 64
+dropout_prob: 0.2
+num_blocks: 2
+num_attention_heads: 2
+
+# ===== BERT4Rec-specific (兼容，不改 Trainer) =====
+pooling: last     # 可选: last / mean
