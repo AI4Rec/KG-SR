@@ -23,11 +23,11 @@ env/
 
 # ---- 数据与衍生物 (按你的结构定制) ----
 # 数据（原始 & 处理后）不入库
-dataset/**
+# dataset/**
 !dataset/.gitkeep
 
 # 训练产物（模型、日志、配置快照等）
-saved/**
+# saved/**
 !saved/.gitkeep
 
 # 结果目录，默认整体忽略，但保留一个小型汇总 CSV（你已有）
@@ -39,11 +39,11 @@ results/**
 logs/
 *.log
 **/main.log
-**/train.log
+# **/train.log
 
 # ---- 常见大模型文件后缀，避免误入库 ----
 *.pth
-*.pth.tar
+# *.pth.tar
 *.pt
 *.ckpt
 *.bin

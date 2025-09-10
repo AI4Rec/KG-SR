@@ -1,0 +1,27 @@
+config: configs/model/gru4rec_ml1m.yaml
+model_name: GRU4Rec
+dataset_name: ml-1m
+seed: 42
+log_level: INFO
+window_size: 5
+epochs: 200
+batch_size: 256
+learning_rate: 0.001
+weight_decay: 0.0
+patience: 20
+num_workers: 4
+embedding_dim: 64
+dropout_prob: 0.2
+hidden_size: 64
+num_layers: 1
+num_blocks: 2
+num_attention_heads: 2
+kg_embedding_dim: 64
+freeze_kg: false
+gamma: 0.5
+n_gcn_layers: 2
+mess_dropout_prob: 0.1
+kg_loss_lambda: 0.1
+regs:
+- 1.0e-05
+- 1.0e-05
